@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Inspec test for recipe cronner::default
+# Inspec test for recipe ds_cronner::default
 
 version = '0.6.1'.freeze
 

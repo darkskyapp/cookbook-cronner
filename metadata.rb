@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-name 'cronner'
+name 'ds_cronner'
 version '0.3.4'
 license 'Apache 2.0'
 

@@ -12,14 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-name 'cronner_resource_test'
+name 'ds_cronner_resource_test'
 version '0.0.1'
 license 'Apache 2.0'
 
 maintainer 'Tim Heckman'
 maintainer_email 't@heckman.io'
 
-description 'Cookbook for integration tests of the cronner cookbook'
-long_description 'Cookbook for integration tests of the cronner cookbook'
+description 'Cookbook for integration tests of the ds_cronner cookbook'
+long_description 'Cookbook for integration tests of the ds_cronner cookbook'
 
-depends 'cronner'
+depends 'ds_cronner'

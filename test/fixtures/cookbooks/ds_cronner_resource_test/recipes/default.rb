@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: cronner_resource_test
+# Cookbook Name:: ds_cronner_resource_test
 # Recipe:: default
 #
 # Copyright 2017 Tim Heckman <t@heckman.io>

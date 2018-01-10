@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: cronner
+# Cookbook Name:: ds_cronner
 # Recipe:: default
 #
 # Copyright 2017 Tim Heckman <t@heckman.io>

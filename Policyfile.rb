@@ -4,20 +4,20 @@
 # https://docs.chef.io/policyfile.html
 
 # A name that describes what the system you're building with Chef does.
-name "cronner"
+name "ds_cronner"
 
 # Where to find external cookbooks:
 default_source :supermarket
 
 # run_list: chef-client will run these recipes in the order specified.
-run_list "cronner::default"
+run_list "ds_cronner::default"
 
-named_run_list :default, 'cronner::default'
-named_run_list :resource, 'cronner_resource_test'
+named_run_list :default, 'ds_cronner::default'
+named_run_list :resource, 'ds_cronner_resource_test'
 
 # Specify a custom source for a single cookbook:
-cookbook "cronner", path: "."
-cookbook 'cronner_resource_test', path: 'test/fixtures/cookbooks/cronner_resource_test'
+cookbook "ds_cronner", path: "."
+cookbook 'ds_cronner_resource_test', path: 'test/fixtures/cookbooks/ds_cronner_resource_test'
 cookbook 'cron', '>= 3.0.0'
 
 default['cron']['package_name'] = 'cron'

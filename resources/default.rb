@@ -1,6 +1,6 @@
 #
-# Cookbook Name:: cronner
 # Resource:: cronner
+# Cookbook Name:: ds_cronner
 #
 # Copyright 2017 Tim Heckman <t@heckman.io>
 #
@@ -79,7 +79,7 @@ property :wait_secs_for_lock, Integer, default: 0
 include Cronner::Helpers
 
 action :create do
-  include_recipe 'cronner'
+  include_recipe 'ds_cronner'
   include_recipe 'cron'
 
   cron_d format_string(job_name) do
