@@ -15,8 +15,7 @@
 module Cronner
   module Helpers
     def format_string(value)
-      value
-      .gsub(' ', '_')
+      value.tr(' ', '_')
     end
 
     def command_string
