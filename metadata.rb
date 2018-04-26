@@ -1,5 +1,5 @@
 name             'ds_cronner'
-version          '1.0.0'
+version          '1.0.1'
 maintainer       'Jeff Byrnes'
 maintainer_email 'devops@darksky.net'
 license          'Apache-2.0'
