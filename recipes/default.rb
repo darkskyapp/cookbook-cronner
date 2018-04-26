@@ -16,24 +16,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# if no install version was specified
-# use the default
-if node.read('cronner', 'install_version').nil?
-  node.default['cronner']['install_version'] = node['cronner']['default_install_version']
-end
+cronner_version = node['cronner']['version']
 
-cronner_version = node.read!('cronner', 'install_version')
-
-# if no installation checksum was specified
-# use the default from the known_versions hash
-if node.read('cronner', 'install_checksum').nil?
-  node.default['cronner']['install_checksum'] = node.read!('cronner', 'known_versions', cronner_version, 'linux-amd64', 'checksum')
-end
-
-cronner_checksum = node.read!('cronner', 'install_checksum')
-
-cache_path = ::File.join(Chef::Config[:file_cache_path], 'cronner-linux-amd64.tar.gz')
-binary_path = ::File.join('/opt', "cronner-linux-amd64-v#{cronner_version}", 'cronner')
+cache_path = "#{Chef::Config[:file_cache_path]}/cronner-linux-amd64.tar.gz"
+binary_path = "/opt/cronner-linux-amd64-v#{cronner_version}/cronner"
 
 execute "extract_cronner_v#{cronner_version}" do
   command "tar -C /opt -xf #{cache_path}"
@@ -42,11 +28,10 @@ end
 
 remote_file cache_path do
   source "https://github.com/theckman/cronner/releases/download/v#{cronner_version}/cronner-linux-amd64-v#{cronner_version}.tar.gz"
-  checksum cronner_checksum
+  checksum node['cronner']['checksum']['linux-amd64'][cronner_version]
   notifies :run, "execute[extract_cronner_v#{cronner_version}]", :immediately
 end
 
 link '/usr/local/bin/cronner' do
   to binary_path
 end
-

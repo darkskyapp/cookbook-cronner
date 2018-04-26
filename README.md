@@ -19,8 +19,10 @@ including it one of your recipes or by adding it to the `run_list`.
 
 ### Recipe Attributes
 This cookbook only has one attribute to impact the installation
-(`node['cronner']['default_install_version']`), which takes the cronner version
+(`node['cronner']['version']`), which takes the cronner version
 string (e.g., `0.4.2`) that you want to have installed.
+
+Check the `node['cronner']['checksum']` attributes to see which checksums we know about.
 
 ## Resource Usage
 The `cronner` cookbook provides a custom resource to install cron jobs that are monitored
